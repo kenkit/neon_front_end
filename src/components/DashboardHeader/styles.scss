@@ -1,0 +1,233 @@
+@import "../../variables.scss";
+
+.header {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 55px;
+	background: white;
+	padding: 0;
+	font-size: 1.3rem;
+	border-bottom: solid 1px #999;
+	box-shadow: 0 2px 5px #ccc;
+	z-index: 10;
+}
+
+.menuToggle {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 2rem;
+	margin-left: 20px;
+	margin-right: 20px;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	border-radius: 100%;
+	outline: none;
+	&:hover {
+		color: white;
+		background-color: #263238;
+		opacity: 0.3;
+	}
+}
+
+.dashboard-title {
+	flex: 1 0 0;
+	font-size: 1.5rem;
+}
+
+.notification-icon {
+	position: relative;
+	color: #ddd;
+	width: 35px;
+	height: 35px;
+	font-size: 1.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 1rem;
+	cursor: pointer;
+	i {
+		pointer-events: none;
+	}
+	&:hover {
+		color: #aaa;
+	}
+	.new {
+		position: absolute;
+		top: 0px;
+		right: -5px;
+		background: $red;
+		color: white;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 1px;
+		padding-bottom: 1px;
+		border-radius: 100%;
+		font-size: 0.7rem;
+		font-weight: bold;
+	}
+}
+
+@keyframes profileZoom {
+    0% {
+    	transform: translate3d(0, 0, 0);
+    }
+    100% {
+    	transform: translate3d(-110px, 40px, 0) scale(2, 2);
+    	box-shadow: 0 2px 5px #666;
+    }
+}
+@keyframes profileShrink {
+    0% {
+    	transform: translate3d(-110px, 40px, 0) scale(2, 2);
+    	box-shadow: 0 2px 5px #666;
+    }
+    100% {
+    	transform: translate3d(0, 0, 0);
+    }
+}
+
+.dashboard-profile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	margin-right: 25px;
+	background-color: #ccc;
+	background-size: cover;
+	border-radius: 100%;
+	outline: none;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	i {
+		font-size: 2rem;
+		color: white;
+	}
+	&.clicked {
+		animation: profileZoom 0.5s ease-in-out 0s both;
+		z-index: 15;
+	}
+	&.exit {
+		animation: profileShrink 0.5s ease-out 0s forwards;
+	}
+}
+
+.profile-popover {
+	position: absolute;
+	right: 10px;
+	top: 65px;
+	z-index: 12;
+	.profile-content {
+		position: relative;
+		background: white;
+		width: 300px;
+		height: 250px;
+		text-align: center;
+		border-left: solid 1px #aaa;
+		border-bottom: solid 1px #69696f;
+		border-right: solid 1px #aaa;
+		border-radius: 6px;
+		/* box-shadow: 0 3px 22px #666; */
+		box-shadow: 0 2px 8px #ccc;
+		transition: all 0.2s ease-in;
+		display: none;
+		&.active {
+			display: block;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: 255px;
+			border-style: solid;
+			border-width: 0 10px 10px;
+			border-color: white transparent;
+			display: block;
+			width: 0;
+			z-index: 1;
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: -11px;
+			left: 254px;
+			border-style: solid;
+			border-width: 0 11px 11px;
+			border-color: #aaa transparent;
+			display: block;
+			width: 0;
+			z-index: 0;
+		}
+		.profileBg {
+			width: 100%;
+			height: 60px;
+			background: url('../../../public/images/5052.jpg') left top;
+		}
+		.profileContentInner {
+			padding: 1.2rem;
+			font-size: 1.2rem;
+		}
+	}
+}
+
+.sender {
+	display: flex;
+	padding: 1rem;
+	align-items: flex-start;
+	justify-content: center;
+	cursor: pointer;
+	outline: none;
+	min-height: 80px;
+	&:hover {
+		background: #eee;
+	}
+	.senderIcon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 100%;
+		background: #ccc;
+		width: 50px;
+		height: 50px;
+		margin-right: 20px;
+		pointer-events: none;
+		i {
+			color: white;
+			font-size: 2rem;
+		}
+	}
+	.senderContents {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		pointer-events: none;
+		.senderName {
+			display: flex;
+			font-weight: bold;
+			.unreadTag {
+				display: inline-block;
+				background: green;
+				color: white;
+				font-size: 0.7rem;
+				font-weight: normal;
+				padding: 2px;
+				margin-left: 5px;
+				border-radius: 4px;
+			}
+		}
+		.messageSnippet {
+			display: flex;
+			flex: 1;
+			max-width: 150px;
+			overflow: hidden;
+			color: #888;
+			@include line-clamp(2);
+		}
+	}
+}

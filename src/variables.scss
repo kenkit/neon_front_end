@@ -1,0 +1,54 @@
+// Mixins
+@mixin line-clamp($numLines : 1, $lineHeight: 1.412) {
+	overflow: hidden;
+	text-overflow: -o-ellipsis-lastline;
+	text-overflow: ellipsis;
+	display: block;
+	/* autoprefixer: off */
+	display: -webkit-box;
+	-webkit-line-clamp: $numLines;
+	-webkit-box-orient: vertical;
+	max-height: $numLines * $lineHeight + unquote('em');
+}
+
+@mixin blur($radius) {
+	-webkit-filter: blur($radius+px); /* Chrome, Safari */
+	-moz-filter: blur($radius+px);
+	-o-filter: blur($radius+px);
+	-ms-filter: blur($radius+px); /* IE12? */
+	filter: url("data:image/svg+xml;utf8,<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"blur\"><feGaussianBlur stdDeviation=\"#{$radius}\" /></filter></svg>#blur"); /* Firefox, Safari, Chrome*/
+	filter: progid:DXImageTransform.Microsoft.Blur(Strength=$radius); /* IE9 */
+}
+
+// Variables
+$linkBlue: #257aa6;
+$red: #e74a3b;
+$darkBlue: #263238;
+$pageGray: #eee;
+
+$btnDefault: #ccc;
+$btnDefaultTextColor: #666;
+
+$textBoxPlaceholder: #ccc;
+$textBoxHover: #557a8d;
+$label: #6f6f6f;
+$formWidgetBorder: #ccc;
+
+$pageTitle: #696969;
+
+
+// Animations
+@keyframes ripple {
+	0% {
+    	transform: scale(0, 0);
+    	opacity: 1;
+	}
+	20% {
+    	transform: scale(25, 25);
+    	opacity: 1;
+	}
+	100% {
+    	opacity: 0;
+    	transform: scale(40, 40);
+	}
+}

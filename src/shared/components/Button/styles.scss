@@ -1,0 +1,48 @@
+@import "../../../variables.scss";
+
+.default {
+	box-sizing: border-box;
+	background-color: $btnDefault;
+	padding: 0.8rem;
+	border: solid 1px $btnDefault;
+	border-radius: 5px;
+	margin: 0.4rem;
+	max-width: 150px;
+	transition: all 0.3s ease-out;
+	font-weight: bold;
+	position: relative;
+	overflow: hidden;
+	outline: none;
+	&:hover {
+		background-color: #ddd;
+		cursor: pointer;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 5px;
+		height: 5px;
+		background: rgba(225, 225, 225, .5);
+		opacity: 0;
+		border-radius: 100%;
+		transform: scale(1, 1) translate(-50%);
+		transform-origin: 50% 50%;
+	}
+	&:focus:not(:active)::after {
+		animation: ripple 1s ease-out;
+	}
+}
+
+.primary {
+	@extend .default;
+	background-color: $textBoxHover;
+	border-color: $textBoxHover;
+	color: white;
+	&:hover {
+		background-color: white;
+		color: gray;
+		border-color: gray;
+	}
+}

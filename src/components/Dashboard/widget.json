@@ -1,0 +1,55 @@
+[
+	{
+    	"id": "1",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "purple",
+    	"color": "white",
+        "type": "component",
+        "componentSrc": "Weather"
+	},
+	{
+    	"id": "2",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "pink",
+    	"color": "white",
+    	"type": "site",
+    	"url": "https://www.google.com"
+	},
+	{
+    	"id": "3",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "green",
+    	"color": "white"
+	},
+	{
+    	"id": "4",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "blue",
+    	"color": "white"
+	},
+	{
+    	"id": "5",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "orange",
+    	"color": "white"
+	},
+	{
+    	"id": "6",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "green",
+    	"color": "white"
+	},
+	{
+    	"id": "7",
+    	"rows": 1,
+    	"columns": 1,
+    	"background": "indigo",
+    	"color": "white"
+	}
+]

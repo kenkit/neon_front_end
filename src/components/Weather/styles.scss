@@ -1,0 +1,48 @@
+.tempReading {
+	font-size: 4rem;
+	font-weight: bold;
+}
+
+.infoRow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.widgetWrapper {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	.widgetName {
+		display: flex;
+		flex: 1;
+	}
+	.refreshBtn {
+		display: flex;
+		align-self: flex-end;
+		justify-content: flex-end;
+		border: none;
+		outline: none;
+		background: none;
+		color: #ccc;
+		cursor: pointer;
+		transition: all 0.3s ease-out;
+		&:hover {
+			transform: rotate(45deg);
+			color: white;
+		}
+	}
+}
+.weatherIcon {
+	font-size: 2.5rem;
+	margin-right: 1rem;
+	margin-bottom: 10px;
+}
+.marker {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+}

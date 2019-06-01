@@ -1,0 +1,62 @@
+@import "../../../variables.scss";
+
+.searchWrapper {
+	display: flex;
+	margin-right: 1rem;
+	.searchContainer {
+		position: relative;
+		.searchIcon {
+			display: flex;
+			position: absolute;
+			right: 10px;
+			top: 15px;
+			justify-content: center;
+			align-items: center;
+			color: #999;
+		}
+	}
+	.searchResults {
+		position: absolute;
+		z-index: 90;
+		border: solid 1px $formWidgetBorder;
+		background: white;
+		top: 46px;
+		width: 220px;
+		box-shadow: 0 2px 8px #ccc;
+		.searchResultRow {
+			padding: 12px;
+			cursor: pointer;
+			outline: none;
+			&:hover {
+				background: #ccc;
+			}
+		}
+	}
+}
+
+.search {
+	padding: 10px;
+	padding-left: 30px;
+	outline: none;
+	transition: all 0.2s ease-out;
+	color: #333;
+	border: solid 1px $formWidgetBorder;
+	&:hover {
+		border: solid 1px $textBoxHover;
+		background: #eee;
+	}
+	&:focus {
+		border: solid 1px $textBoxHover;
+	}
+}
+
+.innericon {
+	position: absolute;
+	left: 10px;
+	top: 12px;
+	color: #bbb;
+}
+
+.text::placeholder {
+	color: $textBoxPlaceholder;
+}
