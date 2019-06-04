@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import Weather from './Weather';
-import operations from '../../ducks/Weather/operations';
+import Progress from './Progress';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,10 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  getAirTemperature: () => operations.getAirTemperature()(dispatch),
-  getWeatherForecast: () => operations.getWeatherForecast()(dispatch),
 });
 
-const WidgetContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(Weather));
+const WidgetContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(Progress));
 
 export default WidgetContainer;

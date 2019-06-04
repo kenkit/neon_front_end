@@ -80,12 +80,12 @@ class Loader extends Component {
       !offLoader ?
       <div className={loaderClasses} style={loaderStyle}>
         <div className="loader-box">
-          <LoaderPinner
-            type="Oval"
-            color="#e423dd"
-            height="64"
-            width="64"
-          />
+          {/*<LoaderPinner*/}
+          {/*  type="Oval"*/}
+          {/*  color="#e423dd"*/}
+          {/*  height="64"*/}
+          {/*  width="64"*/}
+          {/*/>*/}
           <div className="loader-message" style={{width:'200px', color:'white', textAlign:'center'}}>Connecting to service</div>
           <LinearProgress color="secondary" variant="determinate" value={70} />
         </div>

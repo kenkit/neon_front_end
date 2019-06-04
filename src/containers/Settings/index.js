@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import Settings from '../../components/Settings';
-import operations from '../../ducks/Settings/operations';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -14,8 +13,6 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  uploadProfilePic: (image) => operations.uploadProfilePic(image)(dispatch),
-  getProfilePic: () => operations.getProfilePic()(dispatch),
 });
 
 const SettingsContainer = connect(mapStateToProps, mapDispatchToProps)(withRouter(Settings));

@@ -31,9 +31,7 @@ class Account extends Component {
               </td>
               <td>
                 <div className="example-button-row">
-                  <Button variant="contained" color="secondary">
-                    Buy credits
-                  </Button>
+                  <Button variant="contained" color="secondary">Buy credits</Button>
                 </div>
                 <div>
                 </div>

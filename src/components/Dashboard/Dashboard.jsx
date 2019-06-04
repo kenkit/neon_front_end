@@ -6,6 +6,7 @@ import Tab from '@material-ui/core/Tab';
 import './styles.scss';
 import Loader from '../../shared/components/Loader';
 import Account from '../Account';
+import DeviceBrand from '../DeviceBrand';
 
 
 class Dashboard extends Component {
@@ -51,21 +52,31 @@ class Dashboard extends Component {
 
     const tabContent1 = (
       <div id="prgsize" style={{ height: '300px', backgroundColor: 'rgba( 255,  255, 255, 0.5)' }}>
+        <h1>Gadget Central</h1>
+        <table id="table">
+          <tr>
+          </tr>
+        </table>
       </div>);
     const tabContent2 = (
       <div id="prgsize" style={{ height: '300px', backgroundColor: 'rgba( 255,  255, 255, 0.5)' }}>
+        <h1>Transfer Operations</h1>
       </div>);
     const tabContent3 = (
       <div id="prgsize" style={{ height: '300px', backgroundColor: 'rgba( 255,  255, 255, 0.5)' }}>
+        <h1>Account|Credits</h1>
         <Account></Account>
       </div>);
     const tabContent4 = (
       <div id="prgsize" style={{ height: '300px', backgroundColor: 'rgba( 255,  255, 255, 0.5)' }}>
-        <h4>Maintainer:Sage</h4>
-        <h4>Neon version:1.920020</h4>
-        <br></br>
-        <h4>Build id:1.12232</h4>
-        <h4>Build data:12/12/2020</h4>
+        <h1>About Neon</h1>
+        <div className="about-us">
+          <h4>Maintainer:Sage</h4>
+          <h4>Neon version:1.920020</h4>
+          <br></br>
+          <h4>Build id:1.12232</h4>
+          <h4>Build data:12/12/2020</h4>
+        </div>
       </div>);
     return (
       <div className="dashboard">
@@ -90,8 +101,6 @@ class Dashboard extends Component {
 }
 
 Dashboard.defaultProps = {
-  widgets: [],
-  user: null,
 };
 
 export default Dashboard;

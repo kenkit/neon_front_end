@@ -20,10 +20,6 @@ class Settings extends Component {
   }
 
   componentDidMount() {
-    const {
-      getProfilePic,
-    } = this.props;
-    getProfilePic();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -128,12 +124,10 @@ class Settings extends Component {
 Settings.propTypes = {
   user: PropTypes.shape({}).isRequired,
   uploadProfilePic: PropTypes.func,
-  getProfilePic: PropTypes.func,
 };
 
 Settings.defaultProps = {
   uploadProfilePic: () => {},
-  getProfilePic: () => {},
 };
 
 export default Settings;
